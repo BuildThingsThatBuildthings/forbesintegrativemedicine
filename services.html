@@ -19,6 +19,7 @@
         <nav class="nav-container">
             <a href="index.html" class="logo">
                 <img src="https://storage.googleapis.com/msgsndr/zOxsziHYNept0GFVJlUp/media/66d7acf2766f98ead62ac237.png" alt="Forbes Integrative Medicine" class="logo-img">
+                <span class="logo-text">Forbes Integrative Medicine</span>
             </a>
             <button class="mobile-menu-btn">
                 <span></span>
@@ -45,6 +46,7 @@
         <nav class="container">
             <a href="index.html" class="logo">
                 <img src="https://storage.googleapis.com/msgsndr/zOxsziHYNept0GFVJlUp/media/66d7acf2766f98ead62ac237.png" alt="Forbes Integrative Medicine">
+                <span class="logo-text">Forbes Integrative Medicine</span>
             </a>
             <button class="mobile-menu-btn">
                 <span></span>
@@ -65,174 +67,221 @@
 
     <main>
         <section class="services-hero">
+            <div class="hero-overlay"></div>
             <div class="container">
-                <h1>Our Services</h1>
-                <p class="subtitle">Comprehensive care integrating ancient wisdom with modern medicine</p>
+                <div class="hero-content">
+                    <h1>Our Services</h1>
+                    <p class="subtitle">Discover holistic healing through integrated medical expertise</p>
+                </div>
             </div>
         </section>
 
-        <section class="medical-acupuncture">
+        <section class="services-section">
             <div class="container">
-                <div class="service-card featured">
-                    <div class="service-icon">
-                        <i class="fas fa-needle"></i>
-                    </div>
-                    <h2>Medical Acupuncture</h2>
-                    <p class="service-description">Medical acupuncture is the integration of evidence-based, modern western medicine and traditional acupuncture. Dr. Forbes utilizes several acupuncture techniques in her practice, including Kiko Matsumoto Style (KMS), auricular acupuncture, Chinese scalp acupuncture, and trigger point dry needling.</p>
-                    
-                    <div class="benefits">
-                        <h3>Benefits</h3>
-                        <ul>
-                            <li>Immediate relief from pain, migraines, and digestive issues</li>
-                            <li>Treatment for chronic pain and hormone imbalances</li>
-                            <li>Anxiety and stress management</li>
-                        </ul>
-                    </div>
-
-                    <div class="pricing">
-                        <h3>Duration & Cost</h3>
-                        <ul class="price-list">
-                            <li>
-                                <span>Initial Visit (90 min)</span>
-                                <span>$345.00</span>
-                            </li>
-                            <li>
-                                <span>Follow-Up (45 min)</span>
-                                <span>$245.00</span>
-                            </li>
-                            <li>
-                                <span>Initial Home Visit (90 min)</span>
-                                <span>$395.00</span>
-                            </li>
-                            <li>
-                                <span>Home Visit Follow-Up (55 min)</span>
-                                <span>$295.00</span>
-                            </li>
-                        </ul>
+                <div class="content-cards">
+                    <div class="content-card" onclick="openServiceDialog('acupuncture')">
+                        <div class="card-icon">
+                            <i class="fas fa-needle"></i>
+                        </div>
+                        <h2>Medical Acupuncture</h2>
+                        <div class="card-content">
+                            <p>Evidence-based integration of modern western medicine with traditional acupuncture techniques.</p>
+                            <div class="card-details">
+                                <ul class="feature-list">
+                                    <li>Pain & Migraine Relief</li>
+                                    <li>Stress Management</li>
+                                    <li>Hormone Balance</li>
+                                </ul>
+                            </div>
+                            <div class="card-links">
+                                <span class="price">From $245</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="frequency">
-                        <h3>Treatment Frequency</h3>
-                        <ul>
-                            <li><strong>Acute issues:</strong> 2-3 visits</li>
-                            <li><strong>Chronic conditions:</strong> 2 visits/week for 4 weeks, then reassessment</li>
-                            <li><strong>Maintenance:</strong> Monthly as needed</li>
-                        </ul>
+                    <div class="content-card" onclick="openServiceDialog('marma')">
+                        <div class="card-icon">
+                            <i class="fas fa-hands-holding"></i>
+                        </div>
+                        <h2>Marma Therapy</h2>
+                        <div class="card-content">
+                            <p>Needle-free healing technique using specialized Ayurvedic points for balance and relaxation.</p>
+                            <div class="card-details">
+                                <ul class="feature-list">
+                                    <li>Immediate Relaxation</li>
+                                    <li>Pain Management</li>
+                                    <li>Stress Relief</li>
+                                </ul>
+                            </div>
+                            <div class="card-links">
+                                <span class="price">From $245</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <a href="index.html#contact-section" class="cta-button">Schedule Consultation</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hands-holding"></i>
-                    </div>
-                    <h2>Marma Therapy</h2>
-                    <p class="service-description">A needle-free healing technique using specialized anatomical points from Ayurvedic medicine to calm and restore balance.</p>
-                    
-                    <div class="benefits">
-                        <h3>Benefits</h3>
-                        <ul>
-                            <li>Immediate relaxation and symptom relief</li>
-                            <li>Effective for chronic pain and stress</li>
-                            <li>Perfect for those who prefer no needles</li>
-                        </ul>
-                    </div>
-
-                    <div class="pricing">
-                        <h3>Duration & Cost</h3>
-                        <ul class="price-list">
-                            <li>
-                                <span>Initial Visit (90 min)</span>
-                                <span>$349.00</span>
-                            </li>
-                            <li>
-                                <span>Follow-Up (55 min)</span>
-                                <span>$245.00</span>
-                            </li>
-                        </ul>
+                    <div class="content-card" onclick="openServiceDialog('integrative')">
+                        <div class="card-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h2>Integrative Medicine</h2>
+                        <div class="card-content">
+                            <p>Comprehensive approach combining modern medicine with holistic healing traditions.</p>
+                            <div class="card-details">
+                                <ul class="feature-list">
+                                    <li>Personalized Care</li>
+                                    <li>Natural Solutions</li>
+                                    <li>Lifestyle Guidance</li>
+                                </ul>
+                            </div>
+                            <div class="card-links">
+                                <span class="price">From $345</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <a href="index.html#contact-section" class="cta-button">Schedule Consultation</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-balance-scale"></i>
+                    <div class="content-card" onclick="openServiceDialog('lifestyle')">
+                        <div class="card-icon">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <h2>Lifestyle Coaching</h2>
+                        <div class="card-content">
+                            <p>Ongoing support and motivation for sustainable health transformations.</p>
+                            <div class="card-details">
+                                <ul class="feature-list">
+                                    <li>Health Optimization</li>
+                                    <li>Disease Prevention</li>
+                                    <li>Regular Support</li>
+                                </ul>
+                            </div>
+                            <div class="card-links">
+                                <span class="price">From $85</span>
+                            </div>
+                        </div>
                     </div>
-                    <h2>Integrative Medicine Consultation</h2>
-                    <p class="service-description">A comprehensive approach combining modern medicine with holistic healing traditions.</p>
-                    
-                    <div class="benefits">
-                        <h3>Includes</h3>
-                        <ul>
-                            <li>Thorough health history review</li>
-                            <li>Personalized treatment plans</li>
-                            <li>Nutrition and lifestyle guidance</li>
-                            <li>Evidence-based natural remedies</li>
-                        </ul>
-                    </div>
-
-                    <div class="pricing">
-                        <h3>Duration & Cost</h3>
-                        <ul class="price-list">
-                            <li>
-                                <span>Initial Visit (90 min)</span>
-                                <span>$345.00</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <a href="index.html#contact-section" class="cta-button">Schedule Consultation</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-heart-pulse"></i>
-                    </div>
-                    <h2>Lifestyle Coaching</h2>
-                    <p class="service-description">Ongoing support and motivation for sustainable health transformations.</p>
-                    
-                    <div class="benefits">
-                        <h3>Perfect For</h3>
-                        <ul>
-                            <li>Maintaining lifestyle changes</li>
-                            <li>Preventing chronic disease</li>
-                            <li>Healing support</li>
-                            <li>Regular accountability</li>
-                        </ul>
-                    </div>
-
-                    <div class="pricing">
-                        <h3>Session Packages</h3>
-                        <ul class="price-list">
-                            <li>
-                                <span>Single Session (20 min)</span>
-                                <span>$85.00</span>
-                            </li>
-                            <li>
-                                <span>4 Sessions</span>
-                                <span>$300.00</span>
-                            </li>
-                            <li>
-                                <span>8 Sessions</span>
-                                <span>$550.00</span>
-                            </li>
-                            <li>
-                                <span>12 Sessions</span>
-                                <span>$800.00</span>
-                            </li>
-                            <li>
-                                <span>16 Sessions</span>
-                                <span>$1,000.00</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <a href="index.html#contact-section" class="cta-button">Schedule Consultation</a>
                 </div>
             </div>
         </section>
+
+        <!-- Service Dialogs -->
+        <div id="serviceDialog" class="dialog">
+            <div class="dialog-content">
+                <span class="close-dialog" onclick="closeServiceDialog()">&times;</span>
+                <div id="dialogContent"></div>
+                <a href="index.html#contact-section" class="dialog-button">Schedule Consultation</a>
+            </div>
+        </div>
+
+        <script>
+            const serviceDetails = {
+                acupuncture: {
+                    title: "Medical Acupuncture",
+                    description: "Medical acupuncture is the integration of evidence-based, modern western medicine and traditional acupuncture. Dr. Forbes utilizes several acupuncture techniques in her practice, including Kiko Matsumoto Style (KMS), auricular acupuncture, Chinese scalp acupuncture, and trigger point dry needling.",
+                    pricing: [
+                        "Initial Visit (90 min) - $345.00",
+                        "Follow-Up (45 min) - $245.00",
+                        "Initial Home Visit (90 min) - $395.00",
+                        "Home Visit Follow-Up (55 min) - $295.00"
+                    ],
+                    benefits: [
+                        "Immediate relief from pain and migraines",
+                        "Treatment for chronic pain conditions",
+                        "Hormone balance optimization",
+                        "Anxiety and stress management",
+                        "Digestive health improvement"
+                    ]
+                },
+                marma: {
+                    title: "Marma Therapy",
+                    description: "A needle-free healing technique using specialized anatomical points from Ayurvedic medicine to calm and restore balance. Perfect for those who prefer treatment without needles while still achieving powerful therapeutic effects.",
+                    pricing: [
+                        "Initial Visit (90 min) - $349.00",
+                        "Follow-Up (55 min) - $245.00"
+                    ],
+                    benefits: [
+                        "Immediate relaxation response",
+                        "Effective pain management",
+                        "Stress and anxiety relief",
+                        "Enhanced energy flow",
+                        "Better sleep quality"
+                    ]
+                },
+                integrative: {
+                    title: "Integrative Medicine",
+                    description: "A comprehensive approach combining modern medicine with holistic healing traditions. Dr. Forbes creates personalized treatment plans that address the root cause of your health concerns while supporting your body's natural healing abilities.",
+                    pricing: [
+                        "Initial Visit (90 min) - $345.00",
+                        "Follow-Up Consultation (45 min) - $245.00"
+                    ],
+                    benefits: [
+                        "Thorough health assessment",
+                        "Personalized treatment plans",
+                        "Evidence-based natural remedies",
+                        "Nutritional guidance",
+                        "Lifestyle optimization strategies"
+                    ]
+                },
+                lifestyle: {
+                    title: "Lifestyle Coaching",
+                    description: "Ongoing support and motivation for sustainable health transformations. Regular coaching sessions help you maintain positive changes and achieve your health goals through accountability and expert guidance.",
+                    pricing: [
+                        "Single Session (20 min) - $85.00",
+                        "4 Sessions - $300.00",
+                        "8 Sessions - $550.00",
+                        "12 Sessions - $800.00",
+                        "16 Sessions - $1,000.00"
+                    ],
+                    benefits: [
+                        "Regular accountability",
+                        "Sustainable lifestyle changes",
+                        "Ongoing support and motivation",
+                        "Health goal achievement",
+                        "Prevention-focused strategies"
+                    ]
+                }
+            };
+
+            function openServiceDialog(service) {
+                const details = serviceDetails[service];
+                const dialog = document.getElementById('serviceDialog');
+                const content = document.getElementById('dialogContent');
+                
+                content.innerHTML = `
+                    <h2>${details.title}</h2>
+                    <p class="dialog-description">${details.description}</p>
+                    
+                    <div class="dialog-section">
+                        <h3>Benefits</h3>
+                        <ul>
+                            ${details.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div class="dialog-section">
+                        <h3>Pricing</h3>
+                        <ul class="price-list">
+                            ${details.pricing.map(price => `<li>${price}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                
+                dialog.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeServiceDialog() {
+                const dialog = document.getElementById('serviceDialog');
+                dialog.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            // Close dialog when clicking outside
+            window.onclick = function(event) {
+                const dialog = document.getElementById('serviceDialog');
+                if (event.target === dialog) {
+                    closeServiceDialog();
+                }
+            }
+        </script>
 
         <section class="cta">
             <div class="container">
