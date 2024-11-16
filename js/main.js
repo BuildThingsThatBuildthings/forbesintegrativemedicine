@@ -81,6 +81,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Services Page Header
+    const servicesHeader = document.querySelector('.services-header');
+    if (servicesHeader) {
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                servicesHeader.classList.add('visible');
+            } else {
+                servicesHeader.classList.remove('visible');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        const mobileMenuBtn = servicesHeader.querySelector('.mobile-menu-btn');
+        const navContent = servicesHeader.querySelector('.nav-content');
+        const navMenu = servicesHeader.querySelector('.nav-menu');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navContent.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navContent.contains(e.target) && !mobileMenuBtn.contains(e.target) && navContent.classList.contains('active')) {
+                    mobileMenuBtn.classList.remove('active');
+                    navContent.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+    }
+
     // FAQ Functionality
     const faqItems = document.querySelectorAll('.faq-item');
     
