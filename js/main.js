@@ -1,5 +1,6 @@
 // Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navContent = document.querySelector('.nav-content');
     
@@ -47,5 +48,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         lastScroll = currentScroll;
+    });
+
+    // FAQ Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const wasActive = this.classList.contains('active');
+            
+            // Close all FAQ items
+            faqItems.forEach(faq => {
+                faq.classList.remove('active');
+                const answer = faq.querySelector('.faq-answer');
+                answer.style.maxHeight = null;
+            });
+
+            // If the clicked item wasn't active, open it
+            if (!wasActive) {
+                this.classList.add('active');
+                const answer = this.querySelector('.faq-answer');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
     });
 });

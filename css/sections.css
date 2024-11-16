@@ -253,6 +253,78 @@
     opacity: 0.9;
 }
 
+/* Doctor Profile Section */
+.about-doctor {
+    padding: 5rem 0;
+    background-color: #fff;
+    position: relative;
+}
+
+.doctor-profile {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.doctor-image {
+    flex: 0 0 450px;
+}
+
+.doctor-image .profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.doctor-info {
+    flex: 1;
+}
+
+.doctor-info h2 {
+    color: var(--primary-color);
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.doctor-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+/* Medical Acupuncture Section */
+.medical-acupuncture {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.acupuncture-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.acupuncture-content h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.acupuncture-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
     .hero {
@@ -288,6 +360,24 @@
     .principles .container {
         grid-template-columns: repeat(2, 1fr);
         max-width: 800px;
+    }
+}
+
+@media (max-width: 968px) {
+    .doctor-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .doctor-image {
+        flex: 0 0 auto;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .doctor-info h2 {
+        font-size: 2.3rem;
     }
 }
 
@@ -343,5 +433,17 @@
     .about-content,
     .benefits-content {
         gap: 2rem;
+    }
+
+    .doctor-image {
+        max-width: 280px;
+    }
+
+    .doctor-info h2 {
+        font-size: 2rem;
+    }
+
+    .acupuncture-content h2 {
+        font-size: 2rem;
     }
 }
