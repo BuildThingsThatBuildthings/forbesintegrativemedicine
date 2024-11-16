@@ -923,11 +923,26 @@
 }
 
 .cta .highlight {
-    background: linear-gradient(120deg, #4CAF50, #45a049);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    position: relative;
+    color: #fff;
     font-weight: 700;
+    display: inline-block;
+}
+
+.cta .highlight::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    bottom: -2px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    width: 0;
+    transition: width 0.8s ease-out;
+}
+
+.cta .highlight.animate::after {
+    width: calc(100% + 4px);
 }
 
 .cta .container {
