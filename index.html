@@ -17,16 +17,21 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">
-                <img src="https://storage.googleapis.com/msgsndr/zOxsziHYNept0GFVJlUp/media/66d7acf2766f98ead62ac237.png" alt="Forbes Integrative Medicine Logo" class="logo-img">
-                <h1 class="logo-text">Forbes Integrative Medicine</h1>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <a href="index.html" class="logo">
+                <img src="https://storage.googleapis.com/msgsndr/zOxsziHYNept0GFVJlUp/media/66d7acf2766f98ead62ac237.png" alt="Forbes Integrative Medicine" class="logo-img">
+            </a>
+            <button class="mobile-menu-btn">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="nav-content">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                </ul>
                 <div class="contact-info">
                     <a href="tel:602-688-4874" class="phone-number"><i class="fas fa-phone"></i> 602-688-4874</a>
                 </div>
@@ -34,10 +39,28 @@
         </nav>
     </header>
 
+    <a href="#contact-section" class="consultation-btn">Schedule Consultation</a>
+
     <div class="floating-header">
-        <div class="floating-content">
-            <a href="#consultation" class="schedule-btn">Schedule Consultation</a>
-        </div>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="https://storage.googleapis.com/msgsndr/zOxsziHYNept0GFVJlUp/media/66d7acf2766f98ead62ac237.png" alt="Forbes Integrative Medicine">
+            </a>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-content">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="#contact-section" class="schedule-btn">Schedule Consultation</a>
+            </div>
+        </nav>
     </div>
 
     <main>
@@ -51,7 +74,7 @@
             <div class="hero-content">
                 <h1>Experience Natural Healing with Medical Acupuncture</h1>
                 <p>Integrate ancient wisdom with modern medicine for optimal health.</p>
-                <a href="#contact" class="cta-button">Book Your Consultation Now</a>
+                <a href="#contact-section" class="cta-button">Book Your Consultation Now</a>
             </div>
         </section>
 
@@ -147,10 +170,70 @@
             <div class="container">
                 <h2>Ready to Start Your Healing Journey?</h2>
                 <p>Take the first step towards optimal health and wellness.</p>
-                <a href="tel:602-688-4874" class="cta-button">Schedule Your Consultation</a>
+                <a href="#contact-section" class="cta-button">Schedule Your Consultation</a>
             </div>
         </section>
     </main>
+
+    <section class="contact-section" id="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info-box">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions about our services? Ready to start your journey to better health? Reach out to us today.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <a href="tel:602-688-4874">602-688-4874</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>2915 E Baseline Rd #109<br>Gilbert, AZ 85234</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Interested Service *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a Service</option>
+                                    <option value="Medical Acupuncture">Medical Acupuncture</option>
+                                    <option value="Functional Medicine">Functional Medicine</option>
+                                    <option value="Integrative Medicine">Integrative Medicine</option>
+                                    <option value="Womens Health">Women's Health</option>
+                                    <option value="Pain Management">Pain Management</option>
+                                    <option value="General Question">General Question</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
