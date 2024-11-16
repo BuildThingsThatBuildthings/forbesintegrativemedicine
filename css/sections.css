@@ -1711,3 +1711,61 @@ header.header.hidden {
         display: none;
     }
 }
+
+/* Booking Page Styles */
+.booking-page main {
+    overflow: hidden;
+    height: calc(100vh - 80px);
+}
+
+.booking-page .booking-section {
+    height: 100%;
+    overflow: hidden;
+}
+
+.booking-page .booking-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.booking-page .booking-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .booking-page main {
+        height: calc(100vh - 60px);
+    }
+}
+
+/* Handle iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .booking-page main {
+        height: calc(100vh - 80px - env(safe-area-inset-bottom, 0px));
+    }
+    
+    @media (max-width: 768px) {
+        .booking-page main {
+            height: calc(100vh - 60px - env(safe-area-inset-bottom, 0px));
+        }
+    }
+}
+
+/* Small Mobile Optimizations */
+@media (max-width: 480px) {
+    .booking-page main {
+        height: calc(100vh - 80px);
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 480px) and (orientation: landscape) {
+    .booking-page main {
+        height: calc(100vh - 80px);
+    }
+}
