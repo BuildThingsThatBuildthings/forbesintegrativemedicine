@@ -3,11 +3,22 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: url('https://storage.googleapis.com/msgsndr/zOxsziHYNept0GFVJlUp/media/66d897822211927c403226b1.png') no-repeat center center;
+    background: url('https://storage.googleapis.com/msgsndr/zOxsziHYNept0GFVJlUp/media/66e1d0c72da77e6dab6392f8.png') no-repeat center center;
     background-size: cover;
     padding: 50px 20px;
     display: flex;
     align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 48, 100, 0.5) 0%, rgba(0, 82, 167, 0.7) 100%);
+    pointer-events: none;
 }
 
 .hero-video {
@@ -21,6 +32,7 @@
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     padding: 20px;
+    z-index: 1;
 }
 
 .hero-video video {
@@ -33,6 +45,8 @@
     flex: 1;
     padding: 0 4rem;
     color: var(--white);
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
