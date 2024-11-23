@@ -308,6 +308,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Consultation Popup
+    const popup = document.getElementById('consultation-popup');
+    const closeBtn = document.getElementById('popup-close');
+    const scheduleButtons = document.querySelectorAll('#schedule-btn');
+
+    function openPopup() {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+    }
+
+    function closePopup() {
+        popup.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    // Add click event to all schedule buttons
+    scheduleButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopup();
+        });
+    });
+
+    // Close popup when clicking close button
+    closeBtn.addEventListener('click', closePopup);
+
+    // Close popup when clicking outside
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            closePopup();
+        }
+    });
+
+    // Close popup when pressing Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup.classList.contains('active')) {
+            closePopup();
+        }
+    });
+
     // Highlight animation on scroll
     function handleHighlightAnimation() {
         const highlights = document.querySelectorAll('.cta .highlight');

@@ -44,7 +44,7 @@
         </nav>
     </header>
 
-    <a href="booking.html" class="consultation-btn">Schedule Consultation</a>
+    <a href="#" class="consultation-btn" id="schedule-btn">Schedule Consultation</a>
 
     <div class="floating-header">
         <nav class="container">
@@ -71,7 +71,7 @@
                         <strong>(602) 688-4874)</strong>
                     </a></li>
                 </ul>
-                <a href="booking.html" class="schedule-btn">Schedule Consultation</a>
+                <a href="#" class="schedule-btn" id="schedule-btn">Schedule Consultation</a>
             </div>
         </nav>
     </div>
@@ -92,7 +92,7 @@
                     <div class="hero-content">
                         <h1>Transform Your Health Through Integrative Medicine</h1>
                         <p>Experience personalized care that combines the best of modern medicine with time-tested natural therapies. Start your journey to optimal health today.</p>
-                        <a href="booking.html" class="cta-button">Schedule Your Consultation</a>
+                        <a href="#" class="cta-button" id="schedule-btn">Schedule Consultation</a>
                     </div>
                 </div>
             </div>
@@ -237,10 +237,19 @@
             <div class="container">
                 <h2>Ready to Start Your <span class="highlight">Healing Journey</span>?</h2>
                 <p>Take the first step towards optimal health and wellness.</p>
-                <a href="booking.html" class="cta-button">Schedule Your Consultation</a>
+                <a href="#" class="cta-button" id="schedule-btn">Schedule Your Consultation</a>
             </div>
         </section>
     </main>
+
+    <!-- Consultation Popup -->
+    <div class="popup-overlay" id="consultation-popup">
+        <div class="popup-content">
+            <button class="popup-close" id="popup-close">&times;</button>
+            <h2>Schedule Your Consultation</h2>
+            <iframe src="booking.html" frameborder="0"></iframe>
+        </div>
+    </div>
 
     <section class="contact-section" id="contact-section">
         <div class="container">
