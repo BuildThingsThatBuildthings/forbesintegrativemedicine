@@ -642,6 +642,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .benefit-card:hover {
@@ -799,6 +800,61 @@
     font-size: 0.9rem;
 }
 
+/* Consultation Dialog */
+#consultationDialog.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#consultationDialog .dialog-content {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#consultationDialog .dialog-content h2 {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#consultationDialog iframe {
+    width: 100% !important;
+    min-height: 600px !important;
+    border: none !important;
+}
+
+@media (max-width: 768px) {
+    #consultationDialog .dialog-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    #consultationDialog iframe {
+        min-height: 650px !important;
+    }
+
+    #consultationDialog .dialog-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
 /* Dialog Styles */
 .dialog {
     display: none;
@@ -821,8 +877,7 @@
     max-width: 600px;
     width: 90%;
     max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
+    overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -831,6 +886,8 @@
     top: 1rem;
     right: 1rem;
     font-size: 1.5rem;
+    background: none;
+    border: none;
     color: #666;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -1099,7 +1156,7 @@
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
@@ -1153,6 +1210,7 @@
     text-decoration: none;
     font-size: 1.1rem;
     margin: 0;
+    line-height: 1.6;
 }
 
 .contact-item a:hover {
@@ -1161,140 +1219,23 @@
 
 .contact-form-container {
     background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
+    padding: 1.5rem;
+    border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #444;
-}
-
-.form-group input,
-.form-group select {
-    padding: 0.8rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    color: #333;
-    transition: border-color 0.3s ease;
-    background-color: #fff;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.submit-btn {
-    background: var(--primary-color);
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-    width: 100%;
-}
-
-.submit-btn:hover {
-    background: var(--accent-color);
-    transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .submit-btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
+/* JotForm iframe adjustments */
+.contact-form-container iframe {
+    width: 100% !important;
+    min-height: 380px !important;
+    border: none !important;
 }
 
 @media (max-width: 992px) {
-    .hero {
-        flex-direction: column;
-    }
-
-    .hero-video {
-        height: 50vh;
-    }
-
-    .hero-content {
-        padding: 2rem;
-        text-align: center;
-    }
-
-    .about-content,
-    .benefits-content {
-        flex-direction: column;
-        gap: 3rem;
-    }
-
-    .about-image,
-    .benefits-image {
-        order: -1;
-    }
-
-    .doctor-image,
-    .procedure-image {
-        max-width: 80%;
-        margin: 0 auto;
-    }
-
-    .principles .container {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 800px;
-    }
-}
-
-@media (max-width: 968px) {
-    .doctor-profile {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .doctor-image {
-        flex: 0 0 auto;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-
-    .doctor-info h2 {
-        font-size: 2.3rem;
-    }
-
     .contact-content {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
+        max-width: 800px;
     }
 
     .contact-info-box {
@@ -1309,44 +1250,19 @@
     .contact-item {
         justify-content: center;
     }
+
+    .contact-form-container iframe {
+        min-height: 450px !important;
+    }
 }
 
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .principles .container {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-    }
-
-    .about,
-    .principles,
-    .benefits,
-    .cta {
-        padding: 4rem 0;
-    }
-
-    .doctor-image,
-    .procedure-image {
-        max-width: 100%;
-    }
-
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
     .contact-form-container {
-        padding: 1.5rem;
+        padding: 1rem;
+    }
+
+    .contact-form-container iframe {
+        min-height: 480px !important;
     }
 
     .contact-info-box h2 {
@@ -1355,184 +1271,12 @@
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
+    .contact-section {
+        padding: 2rem 0;
     }
 
-    .about h2,
-    .benefits h2,
-    .cta h2 {
-        font-size: 2rem;
-    }
-
-    .about,
-    .principles,
-    .benefits,
-    .cta {
-        padding: 3rem 0;
-    }
-
-    .about-content,
-    .benefits-content {
-        gap: 2rem;
-    }
-
-    .doctor-image {
-        max-width: 280px;
-    }
-
-    .doctor-info h2 {
-        font-size: 2rem;
-    }
-
-    .acupuncture-content h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .services-hero {
-        height: 50vh;
-        min-height: 300px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero-content .subtitle {
-        font-size: 1.1rem;
+    .contact-content {
         padding: 0 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .content-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .content-card {
-        padding: 1.25rem;
-    }
-
-    .dialog-content {
-        padding: 1.5rem;
-        width: 95%;
-    }
-
-    .dialog-content h2 {
-        font-size: 1.5rem;
-    }
-}
-
-/* Header Transitions */
-.header {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.header.hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-}
-
-.consultation-btn {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.consultation-btn.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Floating Header */
-.floating-header {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.floating-header.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Services Page Header */
-.services-header {
-    position: fixed;
-    top: 20px;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.services-header.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.services-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.services-header .header-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.services-header .consultation-btn {
-    position: static;
-    transform: none;
-    margin: 0;
-}
-
-/* Make original header disappear on scroll */
-header.header {
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-header.header.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-@media (max-width: 768px) {
-    .services-header {
-        padding: 10px 0;
-    }
-
-    .services-header .header-title {
-        font-size: 1.2rem;
-    }
-
-    .services-header .consultation-btn {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .services-header .header-title {
-        font-size: 1rem;
     }
 }
 
@@ -1840,4 +1584,408 @@ header.header.hidden {
     .popup-content iframe {
         height: calc(90vh - 100px);
     }
+}
+
+/* Terms of Service Page */
+.terms-page {
+    padding-top: 80px; /* Add space for the fixed header */
+}
+
+.terms-page .page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 6rem 0;
+    color: var(--white);
+    position: relative;
+}
+
+.terms-page .page-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.terms-page .page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.terms-page .page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+}
+
+.terms-page .last-updated {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    opacity: 0.9;
+}
+
+.terms-content {
+    padding: 4rem 2rem;
+    background: var(--white);
+}
+
+.terms-content .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.terms-section {
+    margin-bottom: 3rem;
+}
+
+.terms-section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.terms-section h3 {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.terms-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.terms-section ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.terms-section li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.terms-section .contact-info {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.terms-section .contact-info p {
+    margin-bottom: 1rem;
+}
+
+.terms-section .contact-info a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.terms-section .contact-info a:hover {
+    color: var(--primary-color);
+}
+
+.terms-section.note {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .terms-page .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .terms-content {
+        padding: 3rem 1.5rem;
+    }
+
+    .terms-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .terms-section h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .terms-page .page-header {
+        padding: 4rem 0;
+    }
+
+    .terms-page .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .terms-content {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Privacy Policy Page */
+.privacy-policy-page {
+    padding-top: 80px; /* Add space for the fixed header */
+}
+
+.privacy-policy-page .page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 6rem 0;
+    color: var(--white);
+    position: relative;
+}
+
+.privacy-policy-page .page-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.privacy-policy-page .page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.privacy-policy-page .page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+}
+
+.privacy-content {
+    padding: 4rem 2rem;
+}
+
+.privacy-content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.privacy-content .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.policy-section {
+    margin-bottom: 3rem;
+}
+
+.policy-section:last-child {
+    margin-bottom: 0;
+}
+
+.policy-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.policy-section h3 {
+    color: var(--primary-color);
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+.policy-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.policy-section ul {
+    margin: 1rem 0 1rem 2rem;
+    padding-left: 1rem;
+}
+
+.policy-section ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.policy-section a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.policy-section a:hover {
+    color: var(--primary-color);
+}
+
+.contact-info {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info strong {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .privacy-policy-page {
+        padding-top: 60px;
+    }
+
+    .privacy-policy-page .page-header {
+        padding: 3rem 1rem;
+    }
+
+    .privacy-policy-page .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .privacy-content {
+        padding: 3rem 1rem;
+    }
+
+    .policy-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .policy-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-info {
+        padding: 1.5rem;
+    }
+}
+
+.terms-section .contact-info {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.terms-section .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.terms-section .contact-details h3 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.terms-section .address-block {
+    line-height: 1.6;
+}
+
+.terms-section .contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.terms-section .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.terms-section .contact-item .label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.terms-section .contact-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.terms-section .contact-item a:hover {
+    color: var(--primary-color);
+}
+
+@media (min-width: 768px) {
+    .terms-section .contact-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .terms-section .contact-item .label {
+        min-width: 80px;
+    }
+}
+
+.contact-form-section {
+    margin-top: 3rem;
+}
+
+.contact-form-wrapper {
+    margin-top: 2rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* JotForm iframe adjustments */
+.contact-form-wrapper iframe {
+    width: 100% !important;
+    min-height: 600px !important;
+    border: none !important;
+}
+
+@media (max-width: 768px) {
+    .contact-form-wrapper iframe {
+        min-height: 700px !important;
+    }
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.footer-copyright a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-copyright a:hover {
+    color: #fff;
+    text-decoration: underline;
 }

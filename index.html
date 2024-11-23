@@ -159,15 +159,15 @@
                 <h2>How Medical Acupuncture Can Help You</h2>
                 <div class="benefits-content">
                     <div class="benefits-grid">
-                        <div class="benefit-card">
+                        <div class="benefit-card" onclick="openContentDialog('pain-relief')">
                             <div class="benefit-icon">
-                                <i class="fas fa-shield-alt"></i>
+                                <i class="fas fa-heart-pulse"></i>
                             </div>
                             <h3>Effective Pain Relief</h3>
                             <p>Alleviate chronic and acute pain naturally, reducing reliance on medication and improving your quality of life.</p>
                         </div>
 
-                        <div class="benefit-card">
+                        <div class="benefit-card" onclick="openContentDialog('stress')">
                             <div class="benefit-icon">
                                 <i class="fas fa-spa"></i>
                             </div>
@@ -175,12 +175,20 @@
                             <p>Find balance and tranquility as acupuncture helps regulate stress hormones and promotes relaxation.</p>
                         </div>
 
-                        <div class="benefit-card">
+                        <div class="benefit-card" onclick="openContentDialog('sleep')">
                             <div class="benefit-icon">
                                 <i class="fas fa-moon"></i>
                             </div>
                             <h3>Better Sleep Quality</h3>
                             <p>Enhance your sleep patterns, fall asleep faster, and wake up feeling refreshed and energized.</p>
+                        </div>
+
+                        <div class="benefit-card" onclick="openContentDialog('immune')">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <h3>Enhanced Immune Function</h3>
+                            <p>Strengthen your body's natural defenses to promote overall wellness.</p>
                         </div>
                     </div>
                     <div class="benefits-image">
@@ -251,6 +259,15 @@
         </div>
     </div>
 
+    <!-- Content Dialogs -->
+    <div id="contentDialog" class="dialog">
+        <div class="dialog-content">
+            <span class="close-dialog" onclick="closeContentDialog()">&times;</span>
+            <div id="dialogContent"></div>
+            <a href="booking.html" class="dialog-button" target="_blank" rel="noopener">Schedule Consultation</a>
+        </div>
+    </div>
+
     <section class="contact-section" id="contact-section">
         <div class="container">
             <div class="contact-content">
@@ -258,54 +275,33 @@
                     <h2>Get in Touch</h2>
                     <p>Have questions about our services? Ready to start your journey to better health? Reach out to us today.</p>
                     <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h3>Phone</h3>
-                                <a href="tel:602-688-4874">602-688-4874</a>
+                        <div class="contact-row">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h3>Phone</h3>
+                                    <a href="tel:602-688-4874">602-688-4874</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h3>Email</h3>
+                                    <a href="mailto:contact@forbesintegrative.com">contact@forbesintegrative.com</a>
+                                </div>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h3>Location</h3>
-                                <p>2915 E Baseline Rd #109<br>Gilbert, AZ 85234</p>
+                                <p>3104 E Camelback Rd<br>Suite 2047<br>Phoenix, AZ 85016</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="service">Interested Service *</label>
-                                <select id="service" name="service" required>
-                                    <option value="">Select a Service</option>
-                                    <option value="Medical Acupuncture">Medical Acupuncture</option>
-                                    <option value="Functional Medicine">Functional Medicine</option>
-                                    <option value="Integrative Medicine">Integrative Medicine</option>
-                                    <option value="Womens Health">Women's Health</option>
-                                    <option value="Pain Management">Pain Management</option>
-                                    <option value="General Question">General Question</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button type="submit" class="submit-btn">Submit</button>
-                    </form>
+                    <script type="text/javascript" src="https://form.jotform.com/jsform/243275732221047"></script>
                 </div>
             </div>
         </div>
@@ -324,10 +320,79 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                <p>&copy; 2024 Forbes Integrative Medicine. All rights reserved.</p>
+                <p>&copy; 2024 Forbes Integrative Medicine. All rights reserved. | <a href="terms.html">Terms of Use</a> | <a href="privacy.html">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
+    <script>
+        const contentDetails = {
+            'pain-relief': {
+                title: 'Effective Pain Relief',
+                description: `
+                    <p>Alleviate chronic and acute pain naturally, reducing reliance on medication and improving your quality of life.</p>
+                    <h3>Learn More:</h3>
+                    <p>Medical acupuncture offers a holistic approach to pain management by stimulating the body's self-healing mechanisms. By targeting specific points, acupuncture may help reduce inflammation, improve circulation, and release endorphins—the body's natural pain relievers. Whether you're dealing with back pain, migraines, or joint discomfort, acupuncture provides a drug-free alternative that may alleviate your symptoms.</p>
+                `
+            },
+            'stress': {
+                title: 'Stress Reduction',
+                description: `
+                    <p>Find balance and tranquility as acupuncture helps regulate stress hormones and promotes relaxation.</p>
+                    <h3>Learn More:</h3>
+                    <p>In today's fast-paced world, stress can take a toll on both your mental and physical health. Acupuncture activates the body's relaxation response, which may calm the mind and reduce stress levels. By promoting balance within the body's energy pathways, acupuncture can support emotional well-being and help you manage daily stressors more effectively.</p>
+                `
+            },
+            'sleep': {
+                title: 'Better Sleep Quality',
+                description: `
+                    <p>Enhance your sleep patterns, fall asleep faster, and wake up feeling refreshed and energized.</p>
+                    <h3>Learn More:</h3>
+                    <p>Sleep is essential for overall health, yet many struggle with insomnia or restless nights. Acupuncture addresses factors that may disrupt sleep, such as stress or discomfort. By promoting relaxation and balance, acupuncture may help you achieve deeper, more restorative sleep, so you wake up feeling refreshed and rejuvenated.</p>
+                `
+            },
+            'immune': {
+                title: 'Enhanced Immune Function',
+                description: `
+                    <p>Strengthen your body's natural defenses to promote overall wellness.</p>
+                    <h3>Learn More:</h3>
+                    <p>A strong immune system is vital for maintaining good health. Acupuncture may support immune function by promoting balance and optimal functioning of bodily systems. Regular acupuncture sessions can help your body operate at its best, potentially reducing susceptibility to common illnesses and enhancing your overall well-being.</p>
+                `
+            }
+        };
+
+        function openContentDialog(content) {
+            const details = contentDetails[content];
+            const dialog = document.getElementById('contentDialog');
+            const dialogContent = document.getElementById('dialogContent');
+            
+            dialogContent.innerHTML = `
+                <h2>${details.title}</h2>
+                ${details.description}
+            `;
+            
+            dialog.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContentDialog() {
+            document.getElementById('contentDialog').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close dialog when clicking outside
+        document.getElementById('contentDialog').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeContentDialog();
+            }
+        });
+
+        // Close dialog on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeContentDialog();
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

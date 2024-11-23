@@ -2,19 +2,19 @@
 .cta-button {
     display: inline-block;
     padding: 1.2rem 2.5rem;
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     color: var(--white);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(228, 168, 83, 0.3);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
 .cta-button:hover {
-    background-color: #d39843;
+    background-color: #3570b8;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(228, 168, 83, 0.4);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
 }
 
 /* Cards */
